@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>G-maps API</title>
+  <style>
+    body {
+      background: #e7e7e7;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Google Map</h3>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+
+      //Map options
+      var options = {
+        zoom: 10,
+        center: {
+          lat: 53.7784,
+          lng: 20.4801
+        }
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Marker icon
+      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      // Add marker
+      // var marker1 = new google.maps.Marker({
+      //   position: {
+      //     lat: 53.75,
+      //     lng: 20.50
+      //   },
+      //   map,
+      //   icon: image
+      // });
+      //
+      // var marker2 = new google.maps.Marker({
+      //   position: {
+      //     lat: 53.77,
+      //     lng: 20.45
+      //   },
+      //   map,
+      //   icon: image
+      // });
+
+      // function getInfoWindow(marker) {
+      //   var infoWindow = new google.maps.InfoWindow({
+      //     content: `<h2>Marker ${marker}</h2>`
+      //   });
+      //   return infoWindow;
+      // }
+
+      const getInfoWindow = marker => new google.maps.InfoWindow({
+        content: `<h2>Marker ${marker}</h2>`
+      });
+
+      marker1.addListener('click', () => {
+        getInfoWindow("1").open(map, marker1);
+      });
+
+      marker2.addListener('click', () => {
+        getInfoWindow("2").open(map, marker2);
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCExaqWUWZtSGxyXi73qLTTQMrNuPAMVd0&callback=initMap">
+  </script>
+</body>
+
+</html>

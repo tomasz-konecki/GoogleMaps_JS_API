@@ -1,0 +1,32 @@
+{
+  "Gdańsk": {
+    "position": {
+      "lat": "54.3520",
+      "lng": "18.6466"
+    }
+  },
+  "Katowice": {
+    "position": {
+      "lat": "50.2649",
+      "lng": "19.0238"
+    }
+  },
+  "Kraków": {
+    "position": {
+      "lat": "50.0647",
+      "lng": "19.9450"
+    }
+  },
+  "Poznań": {
+    "position": {
+      "lat": "52.4064",
+      "lng": "16.9252"
+    }
+  },
+  "Warszawa": {
+    "position": {
+      "lat": "52.2297",
+      "lng": "21.0122"
+    }
+  },
+}
